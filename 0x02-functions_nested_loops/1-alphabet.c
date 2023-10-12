@@ -2,7 +2,7 @@
 /**
  * print_alphabet - wirte the the lower-case alphabet on a line.
  *
- *
+ * Return: 0
  *
  */
 void print_alphabet(void)

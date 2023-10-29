@@ -8,7 +8,7 @@
  *
  * Return: A pointer to the destination buffer.
  */
-char *_strcpy(char *dest, const char *src)
+char *_strcpy(char *dest, char *src)
 {
 	char *original_dest = dest; /* Store the original dest address */
 

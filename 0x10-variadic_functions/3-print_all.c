@@ -1,21 +1,10 @@
 #include <stdio.h>
-#include <stdarg.h>
+#include <stdlib.h>
 #include "variadic_functions.h"
 
 /**
- * p_op - struct with a char pointer and a function pointer.
- * @op: char pointer.
- * @f: function pointer.
- */
-typedef struct p_op
-{
-	char *op;
-	void (*f)(va_list);
-} p_op;
-
-/**
- * pr_int - print an integer type.
- * @val: a va_list struct to process.
+ * pr_int - print a integer type;
+ * @val: a va_list struct to process;
  */
 void pr_int(va_list val)
 {
@@ -23,8 +12,8 @@ void pr_int(va_list val)
 }
 
 /**
- * pr_char - print a char type.
- * @val: a va_list struct to process.
+ * pr_char - print a char type;
+ * @val: a va_list struct to process;
  */
 void pr_char(va_list val)
 {
@@ -32,8 +21,8 @@ void pr_char(va_list val)
 }
 
 /**
- * pr_float - prints a double type.
- * @val: a va_list struct to process.
+ * pr_float - prints a double type;
+ * @val: a va_list struct to process;
  */
 void pr_float(va_list val)
 {
@@ -41,8 +30,8 @@ void pr_float(va_list val)
 }
 
 /**
- * pr_str - print a string type or (nil) if empty/NULL.
- * @val: a va_list struct to process.
+ * pr_str - print a string type or (nil) if empty/NULL;
+ * @val: a va_list struct to process;
  */
 void pr_str(va_list val)
 {
@@ -58,16 +47,18 @@ void pr_str(va_list val)
 		printf("(nil)");
 		break;
 	}
+
 }
 
 /**
- * print_all - print all arguments that match with the format.
+ * print_all - print all argument that match with format.
  * @format: type to print out.
  * @...: arguments to print.
- * Return: Nothing.
+ * Return: Nothing
  */
 void print_all(const char * const format, ...)
 {
+
 	int i, j;
 	va_list vls;
 	p_op ops[] = {
@@ -94,14 +85,9 @@ void print_all(const char * const format, ...)
 			i++;
 		}
 		j++;
-	}
-	putchar('\n');
-	va_end(vls);
-}
 
-int main(void)
-{
-    print_all("cifs", 'H', 123, 3.14, "Hello");
-    return 0;
+	}
+	putchar(10);
+	va_end(vls);
 }
 

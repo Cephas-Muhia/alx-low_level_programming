@@ -8,25 +8,22 @@
  *
  * Return: number of elements in a list
  */
-
 size_t print_list(const list_t *h)
 {
-	size_t n_nodes;
+	size_t nodes;
 
-	if (!h)
-		return (0);
-	n_nodes = 0;
-	do {
-		if (!h->str)
-			printf("[0] (nil)\n");
+	nodes = 0;
+	while (h != NULL)
+	{
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
 		else
 			printf("[%d] %s\n", h->len, h->str);
 
 		h = h->next;
-		n_nodes++;
-	}  while (h);
+		nodes++;
+	}
 
-	return (n_nodes);
+	return (nodes);
 }
-
 

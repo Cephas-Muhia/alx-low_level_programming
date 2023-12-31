@@ -1,15 +1,10 @@
-#ifndef STDLIB_H
-#define STDLIB_H
-#include <stdlib.h>
-#endif
+#ifndef MAIN_H
+#define MAIN_H
 
-#ifndef UNISTD_H
-#define UNISTD_H
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <unistd.h>
-#endif
-
-#ifndef _MAIN_H_
-#define _MAIN__H_
 
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
